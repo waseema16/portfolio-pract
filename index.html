@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Koppee Clone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }body {
+  background-color: #fff9f5;
+  color: #3e2c2c;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3e2c2c;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav .logo {
+  color: white;
+  font-size: 24px;
+  font-family: 'Playfair Display', serif;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.toggle span {
+  background: white;
+  height: 3px;
+  width: 25px;
+  margin: 4px;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #3e2c2c;
+    width: 200px;
+    padding: 10px;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .toggle {
+    display: flex;
+  }
+}
+
+header {
+  background: url('https://themewagon.github.io/Koppee/img/bg-hero.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding-top: 80px;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  margin-bottom: 10px;
+}
+
+.section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about, .services, .pricing, .testimonials, .contact {
+  margin-top: 40px;
+}
+
+.coffee-bg {
+  background: url('https://themewagon.github.io/Koppee/img/bg-coffee.jpg') repeat center center;
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+}
+
+footer {
+  background-color: #3e2c2c;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Koppee</div>
+    <div class="toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul id="menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>  <header>
+    <h1>We Have Been Brewing COFFEE</h1>
+    <p>Since 1950</p>
+  </header>  <section class="section about" id="about">
+    <h2>Serving Since 1950</h2>
+    <p>Our story began with a passion for coffee, quality, and service. This is your personal portfolio — designed with the same dedication.</p>
+  </section>  <section class="section services" id="services">
+    <h2>Fresh & Organic Beans</h2>
+    <p>Instead of coffee, showcase your skills or services — design, development, branding, etc.</p>
+  </section>  <section class="coffee-bg">
+    <h2>50% OFF</h2>
+    <p>On all Sunday consultations & projects</p>
+  </section>  <section class="section pricing" id="pricing">
+    <h2>Competitive Pricing</h2>
+    <p>List your service packages or hourly rates here.</p>
+  </section>  <section class="section testimonials" id="testimonials">
+    <h2>What Clients Say</h2>
+    <p>Share real or placeholder testimonials.</p>
+  </section>  <section class="section contact" id="contact">
+    <h2>Contact Me</h2>
+    <p>Booking/Contact form coming soon.</p>
+  </section>  <footer>
+    <p>&copy; 2025 Your Name | Portfolio</p>
+  </footer>  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('show');
+    }
+  </script></body>
+</html>
