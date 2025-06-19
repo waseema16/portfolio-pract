@@ -1,136 +1,508 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio | Koppee Clone</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
-  <style>
-    * {
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap"
+    rel="stylesheet">
+ <style>
+   * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Open Sans', sans-serif;
-    }body {
-  background-color: #fff9f5;
-  color: #3e2c2c;
-}
+    }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #3e2c2c;
-  padding: 10px 20px;
-  position: fixed;
+    body {
+      background-color: #f5f0ed;
+      color: #2c1f1f;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #131010;
+      padding: 10px 20px;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 24px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .toggle span {
+      background: white;
+      height: 3px;
+      width: 25px;
+      margin: 4px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #3e2c2c;
+        width: 200px;
+        padding: 10px;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .toggle {
+        display: flex;
+      }
+    }
+
+    .banner {
+  position: relative;
   width: 100%;
-  z-index: 1000;
-}
-
-nav .logo {
-  color: white;
-  font-size: 24px;
-  font-family: 'Playfair Display', serif;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.toggle span {
-  background: white;
-  height: 3px;
-  width: 25px;
-  margin: 4px;
-}
-
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background: #3e2c2c;
-    width: 200px;
-    padding: 10px;
-  }
-
-  nav ul.show {
-    display: flex;
-  }
-
-  .toggle {
-    display: flex;
-  }
-}
-
-header {
-  background: url('https://themewagon.github.io/Koppee/img/bg-hero.jpg') no-repeat center center/cover;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+
+.text {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
   text-align: center;
-  padding-top: 80px;
 }
 
-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 64px;
+.text h3 {
+  font-size: 2rem;
+  color: #d89d52;
   margin-bottom: 10px;
 }
 
-.section {
+.text h1 {
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.text p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .about-section {
+  padding: 50px 20px;
+}
+.services-section {
   padding: 60px 20px;
   max-width: 1200px;
   margin: auto;
 }
 
-.section h2 {
+.section-header {
+  text-align: right;
+  margin-bottom: 40px;
+}
+
+.section-header h4 {
+  color: #d5a86f;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.section-header h2 {
   font-size: 32px;
-  margin-bottom: 20px;
-  text-align: center;
+  margin-top: 5px;
+  font-weight: bold;
 }
 
-.about, .services, .pricing, .testimonials, .contact {
-  margin-top: 40px;
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
 }
 
-.coffee-bg {
-  background: url('https://themewagon.github.io/Koppee/img/bg-coffee.jpg') repeat center center;
-  color: white;
-  padding: 50px 0;
-  text-align: center;
+.service-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
 }
 
-footer {
-  background-color: #3e2c2c;
-  color: white;
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-content {
   padding: 20px;
   text-align: center;
 }
 
-  </style>
+.service-content .icon {
+  font-size: 24px;
+  color: #d5a86f;
+  margin-bottom: 10px;
+}
+
+.service-content h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.service-content p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-header {
+    text-align: center;
+  }
+}
+.content-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  gap: 20px;
+}
+
+.text-box {
+  flex: 1;
+  min-width: 300px;
+}
+
+.text-box h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.text-box p,
+.text-box ul {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.text-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.text-box ul li::before {
+  content: "✔ ";
+  color: #e59b3e;
+  font-weight: bold;
+}
+
+.image-box {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+}
+
+.image-box img {
+  max-width: 100%;
+  height: auto;
+}
+
+.btn-dark {
+  background-color: #413936;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.btn-light {
+  background-color: #3e3933;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+  .banned {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.banned img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+.ban {
+  position: relative;
+  width: 100%;
+  height: 150vh;
+  overflow: hidden;
+}
+
+.ban img {
+  width: 100%;
+  height: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  filter: brightness(0.5);
+}
+.section-header{
+  text-align: center;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-box {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+    .section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+.menumay{
+  display: flex;
+  border-image-width: 50%;
+  margin-right: 10%;
+  padding-left: 10%;
+}
+.tic{
+  color: yellow;
+}
+booking-section {
+  background-color: #3a2e2a; /* dark brown */
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.booking-form {
+  width: 100%;
+  max-width: 400px;
+  background-color: transparent;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.booking-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #e59b3e;
+  background-color: transparent;
+  color: #ddd;
+  font-size: 16px;
+  outline: none;
+}
+
+.booking-form input::placeholder,
+.booking-form select {
+  color: #aaa;
+}
+
+.booking-form button {
+  width: 100%;
+  padding: 14px;
+  background-color: #e59b3e;
+  color: #000;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.booking-form button:hover {
+  background-color: #cc842b;
+}
+.man{
+  display: flex;
+}
+.man h2{
+  padding-top: 30%;
+}
+    .about,
+    .services,
+    .pricing,
+    .testimonials,
+    .contact {
+      margin-top: 40px;
+    }
+    .coffee-bg {
+      color: white;
+      padding: 50px 0;
+      text-align: center;
+    }
+    .footer-section {
+  background: url('coff.png') no-repeat center center/cover;
+  color: white;
+  padding: 60px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.footer-box h3 {
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.footer-box p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin-right: 10px;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background-color: #e59b3e;
+  border-color: #e59b3e;
+  color: #000;
+}
+
+.newsletter-form {
+  display: flex;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input[type="email"] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+.newsletter-form button {
+  background-color: #e59b3e;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #000;
+}
+
+@media (max-width: 600px) {
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form input[type="email"],
+  .newsletter-form button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .social-icons a {
+    margin-bottom: 10px;
+  }
+}
+
+    footer {
+      background-color: #1c0f0f;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+ </style>
 </head>
+
 <body>
   <nav>
-    <div class="logo">Koppee</div>
+    <div class="logo">KOPPEE</div>
     <div class="toggle" onclick="toggleMenu()">
       <span></span>
       <span></span>
@@ -143,33 +515,187 @@ footer {
       <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-  </nav>  <header>
-    <h1>We Have Been Brewing COFFEE</h1>
-    <p>Since 1950</p>
-  </header>  <section class="section about" id="about">
-    <h2>Serving Since 1950</h2>
-    <p>Our story began with a passion for coffee, quality, and service. This is your personal portfolio — designed with the same dedication.</p>
-  </section>  <section class="section services" id="services">
-    <h2>Fresh & Organic Beans</h2>
-    <p>Instead of coffee, showcase your skills or services — design, development, branding, etc.</p>
-  </section>  <section class="coffee-bg">
-    <h2>50% OFF</h2>
-    <p>On all Sunday consultations & projects</p>
-  </section>  <section class="section pricing" id="pricing">
+  </nav>
+  <header>
+    <div class="banner">
+  <img src="carousel-1.jpg" alt="Coffee Background">
+  <div class="text">
+    
+    <h3>We Have Been Serving</h3>
+    <h1>COFFEE</h1>
+    <p>* SINCE 1950 *</p>
+  </header>
+  <section class="about-section">
+    <div class="content-box">
+      <div class="text-box">
+        <h2>Our Story</h2>
+        <p>Started as a small café in 2017, our mission has always been to serve quality coffee with passion and care.</p>
+        <p>We believe that every cup tells a story. Our beans are handpicked from the best farms and brewed with love.</p>
+        <button class="btn-dark">Learn More</button>
+      </div>
+
+      <div class="image-box">
+        <img src="ccup.png" alt="Coffee Cup" />
+      </div>
+
+      <div class="text-box">
+        <h2>Our Vision</h2>
+        <p>We aim to become the go-to destination for coffee lovers around the world by staying true to our values.</p>
+        <ul>
+          <li>Deliver exceptional coffee.</li>
+          <li>Leave zero waste behind.</li>
+          <li>Empower coffee communities.</li>
+        </ul>
+        <button class="btn-light">Read Vision</button>
+      </div>
+    </div>
+
+  </section>
+   <section class="services-section">
+    <div class="section-header">
+      <h4>OUR SERVICES</h4>
+      <h2>Fresh & Organic Beans</h2>
+    </div>
+
+    <div class="services-grid">
+      <!-- Service 1 -->
+      <div class="service-card">
+        <img src="service-1.jpg" alt="Coffee Art">
+        <div class="service-content">
+          </div>
+          <div class="icon"></div>
+          <h3>&#x1F4A1;Best Quality Coffee</h3>
+          <p>Sit lorem ipsum et diam elitr est dolor sed duo. Clita erat ipsum et lorem et sit.</p>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="service-card">
+        <img src="service-2.jpg" alt="Coffee Pouring">
+       <div class="service-content">
+        </div>
+          <div class="icon"></div>
+          <h3>&#x1F69A;Fastest Door Delivery</h3>
+          <p>Sit lorem ipsum et diam elitr est dolor sed duo. Clita erat ipsum et lorem et sit.</p>
+        </div>
+        
+
+      <!-- Service 3 -->
+      <div class="service-card">
+        <img src="service-3.jpg" alt="Coffee Table">
+        <div class="service-content">
+          <div class="icon"></div>
+          <h3>&#x1F4CB;Online Table Booking</h3>
+          <p>Sit lorem ipsum et diam elitr est dolor sed duo. Clita erat ipsum et lorem et sit.</p>
+        </div>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="service-card">
+        <img src="service-4.jpg" alt="Coffee Beans">
+        <div class="service-content">
+          <div class="icon"></div>
+          <h3>&#x2615;Fresh Coffee Beans</h3>
+          <p>Sit lorem ipsum et diam elitr est dolor sed duo. Clita erat ipsum et lorem et sit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="banned">
+  <img src="coff.png" alt="Coffee Background">
+  <div class="text">
+    
+    <h3>50% OFF</h3>
+    <h2>sunday special offer</h2>
+    <p>only for sunday from 1st jan to 30th jan 2045</p>
+  </section>
+
+  <section class="section pricing" id="pricing">
     <h2>Competitive Pricing</h2>
     <p>List your service packages or hourly rates here.</p>
-  </section>  <section class="section testimonials" id="testimonials">
-    <h2>What Clients Say</h2>
+    <div class="menumay">
+    <img src="MENU1.png"><img src="menu2.png">
+    </div>
+  </section>
+  <section>
+    <div class="ban">
+  <img src="coff.png" alt="Coffee Background">
+  <div class="text">
+    
+    <h3>30% OFF</h3>
+    <h2>For online reservation</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad asperiores ab veritatis dolorum deserunt. Sunt esse in tempora qui fugit!</p>
+    <p><span class="tic">&#x2713;</span>   Lorem ipsum dolor sit.</p>
+    <p><span class="tic">&#x2713;</span>   Lorem ipsum, dolor sit.</p>
+    <section class="booking-section">
+    <form class="booking-form">
+      <h2>Book Your Table</h2>
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="date" required>
+      <input type="time" required placeholder="time">
+      <select required>
+        <option value="" disabled selected>Person</option>
+        <option value="1">1 Person</option>
+        <option value="2">2 People</option>
+        <option value="3">3 People</option>
+        <option value="4">4 People</option>
+      </select>
+      <button type="submit">Book Now</button>
+    </form>
+    </section>
+  </section>
+  <section class="section testimonials" id="testimonials">
+    <h2>Our Clients Say</h2>
     <p>Share real or placeholder testimonials.</p>
-  </section>  <section class="section contact" id="contact">
-    <h2>Contact Me</h2>
-    <p>Booking/Contact form coming soon.</p>
-  </section>  <footer>
-    <p>&copy; 2025 Your Name | Portfolio</p>
-  </footer>  <script>
+  </section>
+  <div class="man">
+  <img src="ccup.png" width="100">
+  <div><h2>client name</h2></div>
+  </div>
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus minima, corporis impedit neque sed harum fugit adipisci.</p>
+   <section class="footer-section">
+    <div class="footer-container">
+      <!-- Follow Us -->
+      <div class="footer-box">
+        <h3>FOLLOW US</h3>
+        <p>Amet elitr vero magna sed ipsum sit kasd sea elitr lorem rebum</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Open Hours -->
+      <div class="footer-box">
+        <h3>OPEN HOURS</h3>
+        <p><strong>Monday - Friday</strong><br>8.00 AM - 8.00 PM</p>
+        <p><strong>Saturday - Sunday</strong><br>2.00 PM - 8.00 PM</p>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="footer-box">
+        <h3>NEWSLETTER</h3>
+        <p>Amet elitr vero magna sed ipsum sit kasd sea elitr lorem rebum</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your Email" required>
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Your Name | All rights reserved</p>
+  </footer>
+  <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
       menu.classList.toggle('show');
     }
-  </script></body>
+  </script>
+</body>
+
 </html>
