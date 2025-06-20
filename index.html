@@ -296,15 +296,15 @@
 .ban {
   position: relative;
   width: 100%;
-  height: 150vh;
+  height: 80vh;
   overflow: hidden;
 }
 
 .ban img {
   width: 100%;
   height: 100%;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 5%;
+  padding-right:5%;
   filter: brightness(0.5);
 }
 .section-header{
@@ -326,61 +326,6 @@
 .tic{
   color: yellow;
 }
-booking-section {
-  background-color: #3a2e2a; /* dark brown */
-  padding: 50px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.booking-form {
-  width: 100%;
-  max-width: 400px;
-  background-color: transparent;
-  padding: 30px 20px;
-  box-sizing: border-box;
-  color: #fff;
-}
-
-.booking-form h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #fff;
-}
-
-.booking-form input,
-.booking-form select {
-  width: 100%;
-  padding: 12px 15px;
-  margin: 10px 0;
-  border: 1px solid #e59b3e;
-  background-color: transparent;
-  color: #ddd;
-  font-size: 16px;
-  outline: none;
-}
-
-.booking-form input::placeholder,
-.booking-form select {
-  color: #aaa;
-}
-
-.booking-form button {
-  width: 100%;
-  padding: 14px;
-  background-color: #e59b3e;
-  color: #000;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-.booking-form button:hover {
-  background-color: #cc842b;
-}
 .man{
   display: flex;
 }
@@ -394,6 +339,75 @@ booking-section {
     .contact {
       margin-top: 40px;
     }
+    .booking-section {
+  background: url(color.jpg) no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+}
+
+/* Dark overlay */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Booking form container */
+.booking-box {
+  background-color: rgba(60, 42, 30, 0.9);
+  padding: 30px 25px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  color: #fff;
+}
+
+.booking-box h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #f0c674;
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #f0c674;
+  background: transparent;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.booking-form input::placeholder {
+  color: #ccc;
+}
+
+.booking-form select {
+  color: #ccc;
+}
+
+.booking-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #f0c674;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.booking-form button:hover {
+  background-color: #e0b454;
+}
     .coffee-bg {
       color: white;
       padding: 50px 0;
@@ -468,7 +482,6 @@ booking-section {
   font-weight: bold;
   color: #000;
 }
-
 @media (max-width: 600px) {
   .newsletter-form {
     flex-direction: column;
@@ -484,7 +497,24 @@ booking-section {
     margin-bottom: 10px;
   }
 }
+.cafe-conclusion {
+  background-color: white;
+  color: black;
+  padding: 40px 20px;
+  text-align: center;
+}
 
+.cafe-conclusion h2 {
+  color: #f0c674;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.cafe-conclusion p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 auto 15px;
+}
     footer {
       background-color: #1c0f0f;
       color: white;
@@ -556,25 +586,22 @@ booking-section {
       <div class="service-card">
         <img src="service-1.jpg" alt="Coffee Art">
         <div class="service-content">
-          </div>
           <div class="icon"></div>
           <h3>&#x1F4A1;Best Quality Coffee</h3>
           <p>Sit lorem ipsum et diam elitr est dolor sed duo. Clita erat ipsum et lorem et sit.</p>
       </div>
-
+      </div>
       <!-- Service 2 -->
       <div class="service-card">
         <img src="service-2.jpg" alt="Coffee Pouring">
        <div class="service-content">
-        </div>
           <div class="icon"></div>
           <h3>&#x1F69A;Fastest Door Delivery</h3>
           <p>Sit lorem ipsum et diam elitr est dolor sed duo. Clita erat ipsum et lorem et sit.</p>
         </div>
-        
-
-      <!-- Service 3 -->
-      <div class="service-card">
+         </div>
+<!-- Service 3 -->
+          <div class="service-card">
         <img src="service-3.jpg" alt="Coffee Table">
         <div class="service-content">
           <div class="icon"></div>
@@ -606,45 +633,65 @@ booking-section {
 
   <section class="section pricing" id="pricing">
     <h2>Competitive Pricing</h2>
-    <p>List your service packages or hourly rates here.</p>
+    <p>List your service packages or hourly rates here. Nestled on a quiet street corner, the café exudes a cozy charm, with the rich aroma of freshly brewed coffee wafting through the air. Rustic wooden tables invite guests to sit, sip, and lose themselves in soft jazz and the gentle hum of conversation. It’s a haven where time slows and comfort brews in every cup.</p>
   </section>
   <section>
     <div class="ban">
-  <img src="coff.png" alt="Coffee Background">
+  <img src="star.webp" alt="Coffee Background">
   <div class="text">
-    
+    <br><br>
     <h3>30% OFF</h3>
     <h2>For online reservation</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad asperiores ab veritatis dolorum deserunt. Sunt esse in tempora qui fugit!</p>
-    <p><span class="tic">&#x2713;</span>   Lorem ipsum dolor sit.</p>
-    <p><span class="tic">&#x2713;</span>   Lorem ipsum, dolor sit.</p>
-    <section class="booking-section">
-    <form class="booking-form">
-      <h2>Book Your Table</h2>
-      <input type="text" placeholder="Name" required>
-      <input type="email" placeholder="Email" required>
-      <input type="date" required>
-      <input type="time" required placeholder="time">
-      <select required>
-        <option value="" disabled selected>Person</option>
-        <option value="1">1 Person</option>
-        <option value="2">2 People</option>
-        <option value="3">3 People</option>
-        <option value="4">4 People</option>
-      </select>
-      <button type="submit">Book Now</button>
-    </form>
+    <p>Step into a world of flavor and delight with our limited-time offer! Enjoy a flat 30% OFF on all items — from our signature brews .</p>
+    <p><span class="tic">&#x2713;</span>    Deliver exceptional coffee.</p>
+      <p><span class="tic">&#x2713;</span>   Leave zero waste behind.</p>
+    <p><span class="tic">&#x2713;</span>   Empower coffee communities..</p>
     </section>
-  </section>
+    
   <section class="section testimonials" id="testimonials">
     <h2>Our Clients Say</h2>
-    <p>Share real or placeholder testimonials.</p>
+  <p><b><i>we look forward to serving you.please book your table in advanceto ensure a smooth dinning experience.walk-ins are welcome but subject to availability</i></b></p>
+ <h2>client cafe</h2>
+  <p><i>
+    Welcome to <strong>Café Aroma</strong>, where every cup tells a story. Founded with a passion for rich flavors and warm hospitality, Café Aroma has been serving handcrafted coffee, gourmet dishes, and memorable experiences since 2010.
+  </p>
+  <p>
+    Our client believes that food is not just a meal—it’s an experience. From ethically sourced beans to farm-fresh ingredients, everything is prepared with care, creativity, and love.
+  </p>
+  <p>
+    Whether you're here for a quick bite, a family dinner, or a cozy date, we’re proud to offer a space that feels like home.
+ </i> </p>
+</section>
+ <section class="booking-section">
+    <div class="overlay">
+      <div class="booking-box">
+        <h2>Book Your Table</h2>
+        <form class="booking-form">
+          <input type="text" placeholder="Name" required>
+          <input type="email" placeholder="Email" required>
+          <input type="date" required>
+          <input type="time" required>
+          <select required>
+            <option value="" disabled selected>Person</option>
+            <option value="1">1 Person</option>
+            <option value="2">2 People</option>
+            <option value="3">3 People</option>
+            <option value="4">4+ People</option>
+          </select>
+          <button type="submit">Book Now</button>
+        </form>
+      </div>
+    </div>
   </section>
-  <div class="man">
-  <img src="ccup.png" width="100">
-  <div><h2>client name</h2></div>
-  </div>
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus minima, corporis impedit neque sed harum fugit adipisci.</p>
+  <section class="cafe-conclusion">
+  <h2>We’re Waiting to Welcome You</h2>
+  <p>
+    At Café Aroma, we blend cozy ambiance with rich flavors to create an unforgettable experience. Whether you’re stopping by for a morning espresso, a lunch meeting, or a relaxing dinner, our team is dedicated to making every visit special.
+  </p>
+  <p>
+    Come for the coffee, stay for the comfort. We can’t wait to serve you.
+  </p>
+</section>
    <section class="footer-section">
     <div class="footer-container">
       <!-- Follow Us -->
@@ -658,7 +705,7 @@ booking-section {
           <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
-
+</div>
       <!-- Open Hours -->
       <div class="footer-box">
         <h3>OPEN HOURS</h3>
